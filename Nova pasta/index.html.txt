@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queridômetro BBB - Simulação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Queridômetro BBB Emília Fest 2025</h1>
+
+    <div id="login-view" class="container">
+        <h2>Selecione seu usuário</h2>
+        <div class="user-buttons">
+            <button onclick="login('Eduarda')">Eduarda</button>
+            <button onclick="login('Emilia')">Emilia</button>
+            <button onclick="login('Karol')">Karol</button>
+            <button onclick="login('Kelvin')">Kelvin</button>
+            <button onclick="login('Lucas')">Lucas</button>
+            <button onclick="login('Neto')">Neto</button>
+            <button onclick="login('Paulo')">Paulo</button>
+            <button onclick="login('Richardson')">Richardson</button>
+        </div>
+        <hr>
+        <button onclick="login('Gerente')">Gerente (Administrador)</button>
+    </div>
+
+    <div id="voter-view" class="container hidden">
+        <h2 id="voter-name"></h2>
+        <p>Vote em um participante para mostrar seu sentimento!</p>
+        <div class="vote-form">
+            <div class="form-group">
+                <label for="participant-select">Participante:</label>
+                <select id="participant-select"></select>
+            </div>
+            <div class="form-group">
+                <label>Emoji:</label>
+                <div class="emoji-options">
+                    <span class="emoji-btn" onclick="selectEmoji('❤️')">❤️</span>
+                    <span class="emoji-btn" onclick="selectEmoji('🐍')">🐍</span>
+                    <span class="emoji-btn" onclick="selectEmoji('💣')">💣</span>
+                    <span class="emoji-btn" onclick="selectEmoji('💩')">💩</span>
+                    <span class="emoji-btn" onclick="selectEmoji('👑')">👑</span>
+                </div>
+            </div>
+            <p id="selected-emoji-display">Emoji selecionado: Nenhum</p>
+            <button id="submit-vote-btn" onclick="submitVote()">Votar!</button>
+        </div>
+        <p id="vote-message"></p>
+        <button class="back-btn" onclick="logout()">Voltar</button>
+    </div>
+
+    <div id="admin-view" class="container hidden">
+        <h2>Resultados do Queridômetro</h2>
+        <div id="results-display"></div>
+        <button class="back-btn" onclick="logout()">Voltar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
